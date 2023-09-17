@@ -16,9 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  });
+  const user_ip = req.ip;
+  res.json({ ip: user_ip });
 });
 
 app.use('/api/v1', api);
